@@ -1,0 +1,10 @@
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\bin\Debug\Rocket-Ship.exe.config
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\bin\Debug\Rocket-Ship.exe
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\bin\Debug\Rocket-Ship.pdb
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket-Ship.csprojAssemblyReference.cache
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket_Ship.Properties.Resources.resources
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket-Ship.csproj.GenerateResource.cache
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket-Ship.csproj.CoreCompileInputs.cache
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket-Ship.exe
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket-Ship.pdb
+C:\Users\David Wiafe\source\repos\Rocket-Ship\Rocket-Ship\obj\Debug\Rocket_Ship.Form1.resources
