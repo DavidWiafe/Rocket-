@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,6 +34,7 @@ namespace Rocket_Ship
                 //go up
                 //rocket.Top -= 5;
                 Rockect_Ship.Top -= currentSpeed;
+
                 upKeyClickCount += 1;
             }
             Console.WriteLine(upKeyClickCount);
@@ -76,13 +78,31 @@ namespace Rocket_Ship
             
             String[] counterArray = {"3 ","2 ","1... ","and we have lift off" };
 
-            for (int count = 0; count < 4; count++ ) {
+            Task.Factory.StartNew(() =>
+            {
+                for (int count = 0; count < 4; count++)
+                {
 
-                counter.Text = counterArray[count];
+                    ExecuteSecure(() => counter.Text = counterArray[count]);
 
-                 counter.Update();
-            }
+                    //counter.Refresh();
+
+                    Thread.Sleep(1000);
+                }
+            });
            
+        }
+
+        private void ExecuteSecure(Action action)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new MethodInvoker(() => action()));
+            }
+            else
+            {
+                action();
+            }
         }
 
         public void ascend_rocket()
@@ -90,7 +110,7 @@ namespace Rocket_Ship
             int up = 0;
 
             
-            for(; up < 35; up += 5 ){
+           for(; up < 35; up += 5 ){
                 
                 Rockect_Ship.Top -= up;
 
