@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//refs 
+using System.Timers;
 
 namespace Rocket_Ship
 {
@@ -17,17 +19,18 @@ namespace Rocket_Ship
         {
             InitializeComponent();
         }
-        
-        private static double fuelUsage;
-
+        #region static variables
+        private static int fuelUsage = 0;
+        //the speed of the rocket
         private static int currentSpeed = 1;
-
+        //count how many times the W key been clicked
         private static int upKeyClickCount = 0;
+        #endregion
 
         //moving objects using keyboard keys
         private void Game_KeyDown(object sender, KeyEventArgs key)
         {
-          
+           
             #region movement controls
             if (key.KeyCode == Keys.W)
             {
@@ -67,9 +70,17 @@ namespace Rocket_Ship
             {
                 currentSpeed += 2;
 
-                status.Value -= 2;
+                status.Value -= fuelUsage;
+            }
+            //every 10 nth decrease the 
+            if (upKeyClickCount % 10 == 0)
+            {
+               
             }
             #endregion
+            if (currentSpeed > 12) {
+                fuelUsage = 10;
+            }
         }
 
 
@@ -77,6 +88,7 @@ namespace Rocket_Ship
         {
             
             String[] counterArray = {"3 ","2 ","1... ","and we have lift off" };
+          
 
             Task.Factory.StartNew(() =>
             {
@@ -84,13 +96,23 @@ namespace Rocket_Ship
                 {
 
                     ExecuteSecure(() => counter.Text = counterArray[count]);
-
+                    Console.WriteLine(counter.Text);
                     //counter.Refresh();
 
-                    Thread.Sleep(1000);
+                   Thread.Sleep(1000);
+                }
+
+                for (int up = 0; up < 35; up += 2)
+                {
+
+                    ExecuteSecure(() => Lanchpanel.Top -= up);
+
+                    Console.WriteLine("up values {0}", up);
+
+                    Thread.Sleep(100);
                 }
             });
-           
+
         }
 
         private void ExecuteSecure(Action action)
@@ -107,17 +129,19 @@ namespace Rocket_Ship
 
         public void ascend_rocket()
         {
-            int up = 0;
 
-            
-           for(; up < 35; up += 5 ){
+
+            //Thread.Sleep(10000);
+            /*Task.Factory.StartNew(() =>
+                {
+                    for (int up = 0; up < 35; up += 2 ){
+
+                        ExecuteSecure(() => Lanchpanel.Top -= up);
+                    Console.WriteLine("up values {0}",up);
+                    Thread.Sleep(100);
                 
-                Rockect_Ship.Top -= up;
-
-               // up++;
-
-            }
-
+                }
+           });*/
         }
 
         #region button clicks
@@ -125,7 +149,25 @@ namespace Rocket_Ship
 
             start_countDown();
 
-            ascend_rocket();
+            //wait three secs
+            //Thread.Sleep(15000);
+
+            //ascend_rocket();
+          
+
+        }
+        //clicking the text button 
+        private void test(object sender, EventArgs e) {
+
+            //test the track bar
+            trackBar1.Value = 10;
+
+            //stop wait 2 secs
+            Thread.Sleep(200);
+           
+
+            trackBar1.Value = 0;
+            
 
         }
 

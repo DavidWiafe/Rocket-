@@ -37,13 +37,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.counter = new System.Windows.Forms.Label();
+            this.Lanchpanel = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.testButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Rockect_Ship.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // status
             // 
-            this.status.Location = new System.Drawing.Point(196, 678);
+            this.status.Location = new System.Drawing.Point(546, 704);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(147, 23);
             this.status.TabIndex = 0;
@@ -52,7 +56,7 @@
             // rocket
             // 
             this.rocket.AutoSize = true;
-            this.rocket.Location = new System.Drawing.Point(299, 545);
+            this.rocket.Location = new System.Drawing.Point(205, 503);
             this.rocket.Name = "rocket";
             this.rocket.Size = new System.Drawing.Size(35, 13);
             this.rocket.TabIndex = 1;
@@ -79,9 +83,9 @@
             // Rockect_Ship
             // 
             this.Rockect_Ship.Controls.Add(this.panel1);
-            this.Rockect_Ship.Location = new System.Drawing.Point(400, 475);
+            this.Rockect_Ship.Location = new System.Drawing.Point(508, 552);
             this.Rockect_Ship.Name = "Rockect_Ship";
-            this.Rockect_Ship.Size = new System.Drawing.Size(216, 144);
+            this.Rockect_Ship.Size = new System.Drawing.Size(228, 144);
             this.Rockect_Ship.TabIndex = 3;
             this.Rockect_Ship.TabStop = false;
             // 
@@ -112,16 +116,45 @@
             // counter
             // 
             this.counter.AutoSize = true;
-            this.counter.Location = new System.Drawing.Point(481, 417);
+            this.counter.Location = new System.Drawing.Point(12, 359);
             this.counter.Name = "counter";
             this.counter.Size = new System.Drawing.Size(0, 13);
             this.counter.TabIndex = 7;
+            // 
+            // Lanchpanel
+            // 
+            this.Lanchpanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Lanchpanel.Location = new System.Drawing.Point(78, 593);
+            this.Lanchpanel.Name = "Lanchpanel";
+            this.Lanchpanel.Size = new System.Drawing.Size(21, 91);
+            this.Lanchpanel.TabIndex = 8;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(177, 682);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.TabIndex = 9;
+            this.trackBar1.Value = 5;
+            // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(178, 394);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(75, 23);
+            this.testButton.TabIndex = 10;
+            this.testButton.Text = "Test";
+            this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Click += new System.EventHandler(this.test);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 739);
+            this.Controls.Add(this.testButton);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.Lanchpanel);
             this.Controls.Add(this.counter);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -136,6 +169,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Rockect_Ship.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +186,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label counter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel Lanchpanel;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Button testButton;
     }
 }
 
