@@ -165,6 +165,7 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

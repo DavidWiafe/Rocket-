@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //refs 
-using System.Timers;
+
 
 namespace Rocket_Ship
 {
@@ -18,6 +18,8 @@ namespace Rocket_Ship
         public Form1()
         {
             InitializeComponent();
+            String guidValue =  Guid.NewGuid().ToString();
+            Console.WriteLine("My Guid = {0}",guidValue);
         }
         #region static variables
         private static int fuelUsage = 0;
@@ -40,6 +42,14 @@ namespace Rocket_Ship
 
                 upKeyClickCount += 1;
             }
+
+            while (key.KeyCode == Keys.W) {
+
+                Rockect_Ship.Top -= currentSpeed;
+
+                //Thread.Sleep(100);
+            };
+
             Console.WriteLine(upKeyClickCount);
             if (key.KeyCode == Keys.S)
             {
@@ -52,6 +62,7 @@ namespace Rocket_Ship
                 //go toward the left
                 rocket.Left -= 10;
             }
+
             if (key.KeyCode == Keys.D)
             {
                 //go towards the right
@@ -102,7 +113,7 @@ namespace Rocket_Ship
                    Thread.Sleep(1000);
                 }
 
-                for (int up = 0; up < 35; up += 2)
+                for (int up = 0; up <= 46; up += 2)
                 {
 
                     ExecuteSecure(() => Lanchpanel.Top -= up);
@@ -148,13 +159,7 @@ namespace Rocket_Ship
         private void lanuching(object sender, EventArgs e) {
 
             start_countDown();
-
-            //wait three secs
-            //Thread.Sleep(15000);
-
-            //ascend_rocket();
-          
-
+        
         }
         //clicking the text button 
         private void test(object sender, EventArgs e) {
@@ -165,13 +170,15 @@ namespace Rocket_Ship
             //stop wait 2 secs
             Thread.Sleep(200);
            
-
             trackBar1.Value = 0;
             
-
         }
 
         #endregion
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
